@@ -104,7 +104,7 @@ class CharacterBuilder extends LitElement {
         ></rpg-character>
         <div class="seed-display">Seed: ${this.seed}</div>
       </div>
-
+      
       <div class="controls">
         ${this.renderInputs()}
         <wired-button @click="${this.generateShareLink}">Share Character</wired-button>
