@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "rpg-me.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CharacterBuilder",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "method",
+              "name": "renderInputs"
+            },
+            {
+              "kind": "method",
+              "name": "updateSetting",
+              "parameters": [
+                {
+                  "name": "key"
+                },
+                {
+                  "name": "value"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "generateSeedFromSettings"
+            },
+            {
+              "kind": "method",
+              "name": "updateCharacterFromSeed"
+            },
+            {
+              "kind": "method",
+              "name": "generateShareLink"
+            },
+            {
+              "kind": "field",
+              "name": "characterSettings",
+              "privacy": "public",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ accessories: 0, base: 1, face: 0, faceitem: 0, hair: 0, pants: 0, shirt: 0, skin: 0, hat: \"none\", hatcolor: 0, fire: false, walking: false, circle: false, }",
+              "attribute": "characterSettings"
+            },
+            {
+              "kind": "field",
+              "name": "seed",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"0000000000\"",
+              "attribute": "seed"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "characterSettings",
+              "type": {
+                "text": "object"
+              },
+              "default": "{ accessories: 0, base: 1, face: 0, faceitem: 0, hair: 0, pants: 0, shirt: 0, skin: 0, hat: \"none\", hatcolor: 0, fire: false, walking: false, circle: false, }",
+              "fieldName": "characterSettings"
+            },
+            {
+              "name": "seed",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"0000000000\"",
+              "fieldName": "seed"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "CharacterBuilder",
+            "module": "rpg-me.js"
+          }
+        }
+      ]
+    }
+  ]
+}
