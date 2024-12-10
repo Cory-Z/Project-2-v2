@@ -86,22 +86,21 @@ class CharacterBuilder extends LitElement {
   render() {
     return html`
       <div class="character-preview">
-        <rpg-character
-          id="rpg-character"
-          .accessories="${this.characterSettings.accessories}"
-          .base="${this.characterSettings.base}"
-          .face="${this.characterSettings.face}"
-          .faceitem="${this.characterSettings.faceitem}"
-          .hair="${this.characterSettings.hair}"
-          .pants="${this.characterSettings.pants}"
-          .shirt="${this.characterSettings.shirt}"
-          .skin="${this.characterSettings.skin}"
-          .hat="${this.characterSettings.hat}"
-          .hatcolor="${this.characterSettings.hatcolor}"
-          .fire="${this.characterSettings.fire}"
-          .walking="${this.characterSettings.walking}"
-          .circle="${this.characterSettings.circle}"
-        ></rpg-character>
+      <rpg-character
+  id="rpg-character"
+  .accessories="${this.characterSettings.accessories}"
+  .base="${this.characterSettings.base}"
+  .face="${this.characterSettings.face}"
+  .hair="${this.characterSettings.hair}"
+  .pants="${this.characterSettings.pants}"
+  .shirt="${this.characterSettings.shirt}"
+  .skin="${this.characterSettings.skin}"
+  .hat="${this.characterSettings.hat}"
+  .hatcolor="${this.characterSettings.hatcolor}"
+  .fire="${this.characterSettings.fire}"
+  .walking="${this.characterSettings.walking}"
+  .circle="${this.characterSettings.circle}"
+></rpg-character>
         <div class="seed-display">Seed: ${this.seed}</div>
       </div>
       
