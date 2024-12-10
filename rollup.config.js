@@ -4,43 +4,33 @@ import { rollupPluginHTML as html } from '@web/rollup-plugin-html';
 import { importMetaAssets } from '@web/rollup-plugin-import-meta-assets';
 import esbuild from 'rollup-plugin-esbuild';
 import terser from '@rollup/plugin-terser';
+import copy from 'rollup-plugin-copy';
 
 export default {
-  input: 'index.html', // Entry file
+  input: 'index.html', // The main entry point
   output: {
-    dir: 'public',
+    dir: 'public', // Output directory
     format: 'es',
-    entryFileNames: '[hash].js',
-    chunkFileNames: '[hash].js',
-    assetFileNames: '[hash][extname]',
-
+    entryFileNames: '[name]-[hash].js',
+    chunkFileNames: '[name]-[hash].js',
+    assetFileNames: '[name]-[hash][extname]',
   },
-
-
   plugins: [
-
     html({
       minify: true,
     }),
-
     nodeResolve({
       browser: true,
-      exportConditions: ['browser', 'development'],
     }),
-
     esbuild({
-      target: 'es2017',
       minify: true,
-
+      target: 'es2017',
     }),
-
-    importMetaAssets(),
-
-    babel({
-      babelHelpers: 'bundled',
-
-    }),
-    
     terser(),
+    copy({
+      targets: [
+        { src: 'node_modules/@haxtheweb/rpg-character/lib/**/*', dest: 'public/lib' },
+      ],
+    }),
   ],
 };
