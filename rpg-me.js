@@ -1,10 +1,4 @@
-/**
- * Copyright 2024 Cory Zavod
- * @license Apache-2.0, see LICENSE for full text.
- */
 import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
-import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import { WiredInput, WiredSlider, WiredCheckbox, WiredButton } from "wired-elements";
 import "@haxtheweb/rpg-character/rpg-character.js";
 

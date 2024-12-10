@@ -1,7 +1,7 @@
 {
-    "name": "my-project2",
+    "name": "my-character",
     "version": "0.0.0",
-    "description": "Webcomponent my-project2 following hax / open-wc recommendations",
+    "description": "Webcomponent my-character following hax / open-wc recommendations",
     "license": "Apache-2.0",
     "author": {
         "name": "Cory Zavod"
@@ -13,11 +13,11 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Cory Zavod/my-project2"
+        "url": "https://github.com/Cory Zavod/my-character"
     },
     "type": "module",
-    "main": "my-project2.js",
-    "module": "my-project2.js",
+    "main": "my-character.js",
+    "module": "my-character.js",
     "scripts": {
         "start": "web-dev-server",
         "build": "rimraf public && rollup -c rollup.config.js && npm run analyze",
