@@ -7,9 +7,9 @@ import terser from '@rollup/plugin-terser';
 import copy from 'rollup-plugin-copy';
 
 export default {
-  input: 'index.html', // The main entry point
+  input: 'index.html',
   output: {
-    dir: 'public', // Output directory
+    dir: 'public',
     format: 'es',
     entryFileNames: '[name]-[hash].js',
     chunkFileNames: '[name]-[hash].js',
@@ -22,6 +22,7 @@ export default {
     nodeResolve({
       browser: true,
     }),
+    importMetaAssets(),
     esbuild({
       minify: true,
       target: 'es2017',

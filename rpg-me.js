@@ -45,13 +45,13 @@ class CharacterBuilder extends LitElement {
         padding: 20px;
         font-family: Arial, sans-serif;
       }
-  
+
       .character-preview {
         flex: 1;
         max-width: 400px;
         text-align: center;
       }
-  
+
       .controls {
         flex: 2;
         display: flex;
@@ -59,21 +59,21 @@ class CharacterBuilder extends LitElement {
         gap: 10px;
         padding-left: 20px;
       }
-  
+
       label {
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 5px;
       }
-  
+
       wired-slider,
-      
+
       wired-checkbox,
       wired-button {
         display: block;
         margin: 10px 0;
       }
-  
+
       .seed-display {
         margin-top: 10px;
         font-size: 1.2rem;
@@ -86,24 +86,24 @@ class CharacterBuilder extends LitElement {
   render() {
     return html`
       <div class="character-preview">
-      <rpg-character
-  id="rpg-character"
-  .accessories="${this.characterSettings.accessories}"
-  .base="${this.characterSettings.base}"
-  .face="${this.characterSettings.face}"
-  .hair="${this.characterSettings.hair}"
-  .pants="${this.characterSettings.pants}"
-  .shirt="${this.characterSettings.shirt}"
-  .skin="${this.characterSettings.skin}"
-  .hat="${this.characterSettings.hat}"
-  .hatcolor="${this.characterSettings.hatcolor}"
-  .fire="${this.characterSettings.fire}"
-  .walking="${this.characterSettings.walking}"
-  .circle="${this.characterSettings.circle}"
-></rpg-character>
+        <rpg-character
+          id="rpg-character"
+          .accessories="${this.characterSettings.accessories}"
+          .base="${this.characterSettings.base}"
+          .face="${this.characterSettings.face}"
+          .hair="${this.characterSettings.hair}"
+          .pants="${this.characterSettings.pants}"
+          .shirt="${this.characterSettings.shirt}"
+          .skin="${this.characterSettings.skin}"
+          .hat="${this.characterSettings.hat}"
+          .hatcolor="${this.characterSettings.hatcolor}"
+          .fire="${this.characterSettings.fire}"
+          .walking="${this.characterSettings.walking}"
+          .circle="${this.characterSettings.circle}"
+        ></rpg-character>
         <div class="seed-display">Seed: ${this.seed}</div>
       </div>
-      
+
       <div class="controls">
         ${this.renderInputs()}
         <wired-button @click="${this.generateShareLink}">Share Character</wired-button>
@@ -153,7 +153,8 @@ class CharacterBuilder extends LitElement {
             @change="${(e) => this.updateSetting(setting.key, e.target.value)}"
           >
             ${setting.options.map(
-              (option) => html`<option value="${option}" ?selected="${this.characterSettings[setting.key] === option}">${option}</option>`
+              (option) =>
+                html`<option value="${option}" ?selected="${this.characterSettings[setting.key] === option}">${option}</option>`
             )}
           </select>
         `;
@@ -168,17 +169,7 @@ class CharacterBuilder extends LitElement {
   }
 
   generateSeedFromSettings() {
-    const {
-      accessories,
-      base,
-      face,
-      faceitem,
-      hair,
-      pants,
-      shirt,
-      skin,
-      hatcolor,
-    } = this.characterSettings;
+    const { accessories, base, face, faceitem, hair, pants, shirt, skin, hatcolor } = this.characterSettings;
     this.seed = `${accessories}${base}${face}${faceitem}${hair}${pants}${shirt}${skin}${hatcolor}`;
   }
 
