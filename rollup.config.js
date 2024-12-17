@@ -22,12 +22,13 @@ export default {
     nodeResolve({
       browser: true,
     }),
-    importMetaAssets(),
+    
     esbuild({
       minify: true,
-      target: 'es2017',
+      target: 'es2020', // Change target to es2020 to support import.meta
     }),
     terser(),
+    importMetaAssets(), // Ensure assets using import.meta are resolved
     copy({
       targets: [
         { src: 'node_modules/@haxtheweb/rpg-character/lib/**/*', dest: 'public/lib' },
